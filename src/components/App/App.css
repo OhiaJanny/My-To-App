@@ -1,0 +1,175 @@
+/*
+Author: Amandine ARIAS alias Codexarama;
+Project: Todo-List;
+Type: React app;
+Description: Todo list manager : Add - Delete - Edit list items;
+First version: 20/05/2022;
+Tags:
+  react,
+  app,
+  todos,
+  list,
+  accessibility,
+  RGAA,
+  development;
+*/
+
+/* FONTS */
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* COLORS */
+:root {
+  --bg: #262626;
+  --bg-variant: #000;
+
+  --light: #fff;
+  --light-variant: lightgrey;
+
+  --hight: #ff6060;
+  --medium: #ff9472;
+  --low: darkgrey;
+  --none: lightgrey;
+
+  --primary: #f2709c;
+  --secondary: #ff9472;
+  --tertiary: darkgrey;
+
+  --primary-variant: #1c9da3;
+  --secondary-variant: #44dbc4;
+  --tertiary-variant: grey;
+
+  --gradient: linear-gradient(1.1turn, var(--primary), var(--secondary));
+  --gradient_hover: linear-gradient(-1.1turn, var(--primary), var(--secondary));
+
+  --gradient-variant: linear-gradient(
+    1.1turn,
+    var(--primary-variant),
+    var(--secondary-variant)
+  );
+  --gradient-variant_hover: linear-gradient(
+    -1.1turn,
+    var(--primary-variant),
+    var(--secondary-variant)
+  );
+
+  --gradient-neutral: linear-gradient(
+    1.1turn,
+    var(--tertiary-variant),
+    var(--light-variant)
+  );
+  --gradient-neutral_hover: linear-gradient(
+    -1.1turn,
+    var(--tertiary-variant),
+    var(--light-variant)
+  );
+}
+
+/* STANDARDS */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  background: no-repeat;
+}
+
+.clear_bg {
+  background: var(--gradient-neutral);
+}
+
+.add_bg {
+  background: var(--gradient-variant);
+}
+
+.update_bg {
+  background: var(--gradient);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--light);
+}
+
+/* input :not([type='radio']), */
+input,
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+.icon {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* SCROLLBAR */
+body::-webkit-scrollbar,
+.modal::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ACCESSIBILITY */
+input:focus,
+button:focus,
+span:focus {
+  box-shadow: 0 0 0 1.5px var(--light);
+  border-radius: 2rem;
+}
+
+h1:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--light);
+  border-radius: 2rem;
+}
+
+/* APP */
+#tasks_manager {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+#tasks {
+  width: 40vw;
+  height: fit-content;
+  padding: 1.5rem;
+  position: relative;
+  border-radius: 1rem;
+  color: var(--light);
+  background: var(--bg);
+  /* box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.5); */
+  box-shadow: -1rem 1rem rgba(0, 0, 0, 0.5) !important;
+}
+
+.task_count {
+  width: fit-content;
+  margin: 0 auto 2rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: var(--light);
+  font-size: x-large;
+  border-radius: 2rem;
+}
+
+.task_count:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--light);
+}
